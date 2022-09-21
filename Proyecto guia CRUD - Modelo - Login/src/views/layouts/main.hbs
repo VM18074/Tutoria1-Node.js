@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CRUD Node.js</title>
+    
+    <!-- Tailwind CSS Link -->
+    <link rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.0.1/tailwind.min.css">
+
+    <!-- Fontawesome Link -->
+    <link href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" rel="stylesheet">
+ 
+  </head>
+  <body class="bg-gray-200">
+
+    <nav class="flex py-5 bg-green-500 text-white px-24">
+      <div class="w-1/2 px-12 mr-auto">
+        <p class="text-2xl font-bold">Practica por VM18074 </p>
+      </div>
+
+      <ul class="w-1/2 px-10 ml-auto flex justify-end pt-1">
+        {{#if si}}
+       <li class="nav-item px-0">
+            <p class="py-2 px-0">{{usuario}}</p>
+       </li>
+
+       <li class="nav-item px-4">
+          <a href="/register" class="nav-link font-semibold border-2 border-white hover:bg-white hover:text-green-700 py-2
+            px-4 rounded-md">Registrar_usuario</a>
+        </li>
+        
+        <li class="nav-item px-4">
+          <a href="/tasks" class="nav-link font-semibold hover:bg-green-700 py-3 px-4 rounded-md">Mi_tarea</a>
+        </li>
+        
+        <li class="nav-item px-4">
+          <a href="/create" class="nav-link font-semibold border-2 border-white hover:text-green-700 
+            hover:bg-white py-3 px-4 rounded-md">añadir_tarea</a>
+        </li>
+
+        <li class="nav-item px-4">
+          <a href="/logout" class="nav-link font-semibold bg-red-500 hover:bg-red-700 py-3 px-4 rounded-md">Cerrar_Sesión</a>
+        </li>
+        {{else}}
+        {{#if no}}  
+        <li class="nav-item px-0">
+            <p class="py-2 px-0">{{usuario}}</p>
+       </li>            
+        <li class="nav-item px-2">
+          <a href="/tasks" class="nav-link font-semibold hover:bg-green-700 py-3 px-4 rounded-md">Mi_tarea</a>
+        </li>
+        
+        <li class="nav-item px-2">
+          <a href="/logout" class="nav-link font-semibold bg-red-500 hover:bg-red-700 py-3 px-4 rounded-md">Cerrar_Sesión</a>
+        </li>
+          {{else}}
+        <li class="nav-item px-2">
+          <a href="/login" class="nav-link font-semibold hover:bg-green-700 py-3 px-4 rounded-md">Iniciar_sesión</a>
+        </li>
+        {{/if}}
+        {{/if}}
+        
+      </ul>
+    </nav>
+    <!-- Document body -->
+
+    {{{body}}}
+
+
+  </body>
+</html>
